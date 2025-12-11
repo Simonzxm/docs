@@ -3,13 +3,13 @@
 > 笔者在研读 [Dictionaries and Python OOP](https://github.com/KEDIT2007/NJU-SICP-Essays/blob/main/dict-and-python-oop/Dictionaries%20and%20Python%20OOP.md) 的时候意识到自己对 Python 字典的实现了解不够，便在这一方向进行了探索。
 > 我们的 [SICP](https://sicp.pascal-lab.net/2025/) 课程没有讲这一数据结构，我相信也有其他人想深入了解字典；我不妨写一份讲义，来仔细讲讲 Python 的字典，后来者也可少走些弯路。
 
-!!! note
-    这份讲义不适合以下读者：
-
-    - 期望以此学习语法。
-    - 期望以此提高课内成绩。
-    
-    建议在阅读后完成配套练习。
+> [!NOTE]
+> 这份讲义不适合以下读者：
+> 
+> - 期望以此学习语法。
+> - 期望以此提高课内成绩。
+> 
+> 建议在阅读后完成配套练习。
 
 ## Table of Scores
 
@@ -148,42 +148,44 @@ So now we must solve the collision, and there are several ways.
 
 People often use a linked list to solve the collision, but today we are talking about dictionaries in Python, so we will introduce Python's way to solve this problem. As for the linked list solution, it's your job.
 
-!!! note Exercise 1: Hash Table with Linked List
-    Implemented a hash table with linked list, such that the collision will added to the end of the linked list.
-
-    ```python
-    class Hashtable:
-        """
-        An implementation of Hashtable using Link.
-
-        >>> scores = Hashtable()
-        >>> scores["Axe"] = 100
-        >>> scores["Axe"]
-        100
-        >>> scores["Sprite"] = 60
-        >>> scores["Sprite"]
-        60
-        """
-        def __init__(self, size=10):
-            self.size = size
-            self.buckets = [Link.empty] * size
-            self.count = 0
-
-        def _hash_func(self, key):
-            """Hash Function"""
-            return hash(key) % self.size
-        
-        def __setitem__(self, key, value):
-            """Insert / Update"""
-            "*** YOUR CODE HERE ***"
-
-        def __getitem__(self, key):
-            """Lookup"""
-            "*** YOUR CODE HERE ***"
-
-            # Key not found
-            raise KeyError(key)
-
-        def __len__(self):
-            return self.count
-    ```
+> [!NOTE]
+> Exercise 1: Hash Table with Linked List
+> 
+> Implemented a hash table with linked list, such that the collision will added to the end of the linked list.
+> 
+> ```python
+> class Hashtable:
+>     """
+>     An implementation of Hashtable using Link.
+> 
+>     >>> scores = Hashtable()
+>     >>> scores["Axe"] = 100
+>     >>> scores["Axe"]
+>     100
+>     >>> scores["Sprite"] = 60
+>     >>> scores["Sprite"]
+>     60
+>     """
+>     def __init__(self, size=10):
+>         self.size = size
+>         self.buckets = [Link.empty] * size
+>         self.count = 0
+> 
+>     def _hash_func(self, key):
+>         """Hash Function"""
+>         return hash(key) % self.size
+>     
+>     def __setitem__(self, key, value):
+>         """Insert / Update"""
+>         "*** YOUR CODE HERE ***"
+> 
+>     def __getitem__(self, key):
+>         """Lookup"""
+>         "*** YOUR CODE HERE ***"
+> 
+>         # Key not found
+>         raise KeyError(key)
+> 
+>     def __len__(self):
+>         return self.count
+> ```
